@@ -91,10 +91,11 @@ h1{letter-spacing:.5px}h2{letter-spacing:.3px}
 .modal-close:hover{color:var(--txt)}
 .modal-box h3{margin:0 0 8px;font-size:1.4rem;text-align:center;font-family:"Orbitron",sans-serif}
 .modal-box p{color:var(--mut);font-size:.92rem;text-align:center;margin:0 0 20px}
-.modal-form{display:grid;gap:14px}
+.modal-form{display:grid;gap:12px}
 .modal-form label{font-size:.85rem;font-weight:600;color:var(--txt);margin-bottom:4px;display:block}
-.modal-form input{width:100%;background:var(--bg);color:var(--txt);border:1px solid var(--bd);border-radius:10px;padding:12px;font:inherit}
+.modal-form input{width:100%;background:var(--bg);color:var(--txt);border:1px solid var(--bd);border-radius:10px;padding:11px 12px;font:inherit}
 .modal-form input:focus{outline:none;border-color:var(--acc2)}
+.lgpd-aviso{font-size:.75rem;color:var(--mut);text-align:center;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:4px}
 </style>
 </head>
 <body>
@@ -284,8 +285,8 @@ h1{letter-spacing:.5px}h2{letter-spacing:.3px}
 <div class="modal-overlay" id="modalCad">
   <div class="modal-box">
     <button class="modal-close" id="modalClose">&times;</button>
-    <h3>Quase lá! 🚀</h3>
-    <p>Preencha os dados abaixo para darmos início ao seu atendimento no WhatsApp.</p>
+    <h3>Para melhor atendermos 🚀</h3>
+    <p>Preencha seus dados abaixo para iniciar o atendimento via WhatsApp com rapidez.</p>
     <form class="modal-form" id="formLead">
       <div>
         <label for="leadNome">Seu Nome *</label>
@@ -295,7 +296,12 @@ h1{letter-spacing:.5px}h2{letter-spacing:.3px}
         <label for="leadWhats">Seu WhatsApp / Telefone *</label>
         <input type="tel" id="leadWhats" placeholder="Ex: (51) 99999-9999" required>
       </div>
-      <button type="submit" class="btn b1" style="width:100%;margin-top:10px">Iniciar no WhatsApp 💬</button>
+      <div>
+        <label for="leadEmail">Seu E-mail *</label>
+        <input type="email" id="leadEmail" placeholder="Ex: joao@email.com" required>
+      </div>
+      <button type="submit" class="btn b1" style="width:100%;margin-top:6px">Iniciar no WhatsApp 💬</button>
+      <div class="lgpd-aviso">🔒 Seus dados estão protegidos conforme a LGPD.</div>
     </form>
   </div>
 </div>
@@ -351,10 +357,13 @@ var FS_FRETE=9.90;
     e.preventDefault();
     var nome = document.getElementById('leadNome').value.trim();
     var whats = document.getElementById('leadWhats').value.trim();
+    var email = document.getElementById('leadEmail').value.trim();
 
-    if(!nome || !whats) return;
+    if(!nome || !whats || !email) return;
 
-    var msg = 'Olá! Meu nome é ' + nome + ' (WhatsApp: ' + whats + ').\n';
+    var msg = 'Olá! Meu nome é ' + nome + '.\n';
+    msg += '📱 WhatsApp: ' + whats + '\n';
+    msg += '📧 E-mail: ' + email + '\n';
     msg += 'Gostaria de falar sobre: *' + assuntoAtual + '*.';
 
     var url = 'https://wa.me/' + NUM_WHATS + '?text=' + encodeURIComponent(msg);
