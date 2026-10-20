@@ -13,7 +13,7 @@
 html, body {
   scroll-behavior:smooth;
   background:var(--bg);
-  overflow-x: hidden; /* Evita que a página seja arrastada para os lados */
+  overflow-x: hidden;
   width: 100%;
 }
 body{margin:0;color:var(--tx);font-family:'Exo 2',system-ui,sans-serif;line-height:1.6;background:radial-gradient(900px 520px at 8% -5%,rgba(30,144,255,.42),transparent 70%),radial-gradient(700px 480px at 96% 40%,rgba(30,144,255,.22),transparent 70%),linear-gradient(180deg,#06214d 0,#020b1a 40%,#000 100%) fixed}
@@ -39,9 +39,10 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 8px}
 :focus-visible{outline:3px solid #fff;outline-offset:3px}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .badges span{padding:6px 14px;border:1px solid var(--bd);border-radius:99px;font-size:.88rem;color:var(--mut);background:rgba(255,255,255,.04)}
-/* prévia do app */
+
+/* prévia do app (responsiva) */
 .shot{position:relative;overflow:hidden;max-width:100%}
-#fr{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 0 70px rgba(30,144,255,.4);border:1px solid var(--bd);max-width:100%}
+#fr{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 0 70px rgba(30,144,255,.4);border:1px solid var(--bd);max-width:100%;width:100%}
 #tv{width:1280px;height:720px;transform-origin:top left;position:absolute;left:0;top:0;display:flex;flex-direction:column;gap:8px;padding:16px 28px 14px;background:radial-gradient(900px 520px at 8% -5%,rgba(30,144,255,.45),transparent 70%),linear-gradient(180deg,#06214d,#020b1a 55%,#000)}
 #fr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hn{position:relative;flex:none;height:300px;border-radius:18px;overflow:hidden;border:1px solid var(--bd);background:radial-gradient(560px 340px at 82% 30%,rgba(30,144,255,.75),transparent 70%),linear-gradient(135deg,#0b4fa8,#030a18)}
@@ -54,6 +55,7 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 8px}
 .nv span{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 4px;border-radius:12px;font:600 14px 'Exo 2',sans-serif;opacity:.8}
 .nv span.on{background:rgba(30,144,255,.4);opacity:1}
 @media (prefers-reduced-motion:no-preference){.rg{animation:mv 8s steps(1,end) infinite}@keyframes mv{0%{transform:translateX(0)}20%{transform:translateX(164px)}40%{transform:translateX(328px)}60%{transform:translateX(492px)}80%{transform:translateX(656px)}}}
+
 /* baixar */
 .dl{padding:30px;display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .dl h3{margin:0 0 8px;font-size:1.5rem}
@@ -86,7 +88,6 @@ footer a{color:#cfe6ff}
 .wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:99px;background:var(--ac);color:#fff;font:700 1.05rem Rajdhani,sans-serif;text-decoration:none;box-shadow:0 0 28px rgba(30,144,255,.7)}
 .so-app{display:none}.in-app .so-app{display:block}.in-app .so-site{display:none!important}
 
-/* Ajustes para telas pequenas */
 @media (max-width: 600px) {
   .top {
     flex-direction: column;
@@ -122,6 +123,24 @@ footer a{color:#cfe6ff}
     <a class="btn pri so-app" href="nextgen://player">Entrar no player</a>
   </div>
   <div class="badges"><span>Android</span><span>Google TV</span><span>Fire Stick</span><span>TV Box</span><span>Controle remoto</span></div>
+</section>
+
+<!-- PRÉVIA DO APP (RECRIADA E RESPONSIVA) -->
+<section class="w shot" style="padding-top:20px">
+  <div id="fr" role="img" aria-label="Tela inicial do player NextGen.TV: destaque, fileiras de capas e menu inferior">
+    <div id="tv">
+      <div style="display:flex;justify-content:space-between;font-size:15px;height:26px"><span style="color:#8fa3bf">seu.usuario · seu.servidor</span><span>Vence em 00/00/0000</span></div>
+      <div class="hn"><div style="position:absolute;left:40px;bottom:32px;width:640px;display:flex;flex-direction:column;gap:10px">
+        <div style="font:700 48px/1 Rajdhani,sans-serif">Título em destaque</div>
+        <div style="font-size:17px;color:#e0e8f4;line-height:1.45">Sinopse do título em destaque, vinda do seu serviço, aparece aqui em até três linhas.</div>
+        <div style="display:flex;gap:12px;margin-top:8px"><span style="padding:12px 30px;border-radius:12px;background:#1e90ff;font:700 20px Rajdhani,sans-serif;box-shadow:0 0 30px rgba(30,144,255,.9)">▶ Assistir</span><span style="padding:12px 28px;border-radius:12px;background:rgba(255,255,255,.18);font:700 20px Rajdhani,sans-serif">Detalhes</span><span style="padding:12px 28px;border-radius:12px;background:rgba(255,255,255,.18);font:700 20px Rajdhani,sans-serif">Buscar</span></div></div></div>
+      <div style="font:700 24px Rajdhani,sans-serif">Filmes em alta</div>
+      <div class="rw"><div class="p g1"></div><div class="p g2"></div><div class="p g3"></div><div class="p g1"></div><div class="p g2"></div><div class="p g3"></div><div class="p g1"></div><div class="p g2"></div><div class="rg g1"></div></div>
+      <div class="nv"><span>Sair</span><span class="on">Início</span><span>Canais</span><span>Filmes</span><span>Séries</span><span>Favoritos</span><span>Continuar</span><span>Config.</span></div>
+    </div>
+    <img src="print-player.png" alt="Tela inicial do player NextGen.TV" onerror="this.remove()">
+  </div>
+  <p class="note" style="text-align:center">Imagem ilustrativa. Capas e textos vêm do serviço de streaming do próprio usuário.</p>
 </section>
 
 <!-- SEÇÃO DE SERVIÇO E PLANOS -->
@@ -188,23 +207,6 @@ footer a{color:#cfe6ff}
   </div>
 </section>
 
-<section class="w shot" style="padding-top:20px">
-  <div id="fr" role="img" aria-label="Tela inicial do player NextGen.TV: destaque, fileiras de capas e menu inferior">
-    <div id="tv">
-      <div style="display:flex;justify-content:space-between;font-size:15px;height:26px"><span style="color:#8fa3bf">seu.usuario · seu.servidor</span><span>Vence em 00/00/0000</span></div>
-      <div class="hn"><div style="position:absolute;left:40px;bottom:32px;width:640px;display:flex;flex-direction:column;gap:10px">
-        <div style="font:700 48px/1 Rajdhani,sans-serif">Título em destaque</div>
-        <div style="font-size:17px;color:#e0e8f4;line-height:1.45">Sinopse do título em destaque, vinda do seu serviço, aparece aqui em até três linhas.</div>
-        <div style="display:flex;gap:12px;margin-top:8px"><span style="padding:12px 30px;border-radius:12px;background:#1e90ff;font:700 20px Rajdhani,sans-serif;box-shadow:0 0 30px rgba(30,144,255,.9)">▶ Assistir</span><span style="padding:12px 28px;border-radius:12px;background:rgba(255,255,255,.18);font:700 20px Rajdhani,sans-serif">Detalhes</span><span style="padding:12px 28px;border-radius:12px;background:rgba(255,255,255,.18);font:700 20px Rajdhani,sans-serif">Buscar</span></div></div></div>
-      <div style="font:700 24px Rajdhani,sans-serif">Filmes em alta</div>
-      <div class="rw"><div class="p g1"></div><div class="p g2"></div><div class="p g3"></div><div class="p g1"></div><div class="p g2"></div><div class="p g3"></div><div class="p g1"></div><div class="p g2"></div><div class="rg g1"></div></div>
-      <div class="nv"><span>Sair</span><span class="on">Início</span><span>Canais</span><span>Filmes</span><span>Séries</span><span>Favoritos</span><span>Continuar</span><span>Config.</span></div>
-    </div>
-    <img src="print-player.png" alt="Tela inicial do player NextGen.TV" onerror="this.remove()">
-  </div>
-  <p class="note" style="text-align:center">Imagem ilustrativa. Capas e textos vêm do serviço de streaming do próprio usuário.</p>
-</section>
-
 <section class="w so-app"><div class="gl" style="padding:26px"><h2>Você já está no app</h2><p class="sub" style="margin:0">Toque em Entrar no player e use os dados do seu serviço: servidor, usuário e senha.</p></div></section>
 
 <section id="baixar" class="w so-site">
@@ -261,4 +263,4 @@ footer a{color:#cfe6ff}
   <h2>Perguntas frequentes</h2>
   <div style="max-width:780px;margin-top:20px">
     <details class="gl"><summary>O player é mesmo grátis?</summary><p>Sim. O player NextGen.TV é gratuito, sem mensalidade pelo app.</p></details>
-    <details class="gl"><summary>Funciona com qualquer serviço de streaming?</sum
+    <details class="gl"><summary>Funciona com qualquer serviço de streaming?</summary><p>Funcion
