@@ -10,14 +10,9 @@
 <style>
 :root{--bg:#000;--tx:#fff;--mut:#9fb2cc;--ac:#1e90ff;--bd:rgba(34,160,255,.35);--gl:rgba(5,11,24,.78);box-sizing:border-box;padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*:before,*:after{box-sizing:inherit}
-html, body {
-  scroll-behavior:smooth;
-  background:var(--bg);
-  overflow-x: hidden;
-  width: 100%;
-}
+html{scroll-behavior:smooth;background:var(--bg)}
 body{margin:0;color:var(--tx);font-family:'Exo 2',system-ui,sans-serif;line-height:1.6;background:radial-gradient(900px 520px at 8% -5%,rgba(30,144,255,.42),transparent 70%),radial-gradient(700px 480px at 96% 40%,rgba(30,144,255,.22),transparent 70%),linear-gradient(180deg,#06214d 0,#020b1a 40%,#000 100%) fixed}
-.w{max-width:1080px;margin:0 auto;padding:0 20px;width:100%}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
 section{padding:44px 0}
 h1,h2,h3,.logo{font-family:Rajdhani,'Arial Narrow',sans-serif;letter-spacing:.4px}
 h1{font-size:clamp(2.3rem,6.2vw,4rem);line-height:1.05;margin:.3em 0}
@@ -25,10 +20,10 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 8px}
 .sub{color:var(--mut);max-width:640px;margin:0 0 26px}
 .ac{color:var(--ac)}
 .gl{background:var(--gl);border:1px solid var(--bd);border-radius:20px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:calc(16px + env(safe-area-inset-top,0px));padding-bottom:8px;flex-wrap:wrap}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:calc(16px + env(safe-area-inset-top,0px));padding-bottom:8px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.8rem;text-decoration:none;color:var(--tx)}
-.top nav{display:flex;gap:12px;font-weight:600;font-size:.9rem;flex-wrap:wrap}
-.top nav a{color:var(--mut);text-decoration:none;padding:4px 2px}.top nav a:hover{color:var(--tx)}
+.top nav{display:flex;gap:18px;font-weight:600;font-size:.95rem}
+.top nav a{color:var(--mut);text-decoration:none;padding:6px 2px}.top nav a:hover{color:var(--tx)}
 .hero{padding:34px 0 10px}
 .pill{display:inline-block;padding:7px 18px;border:1px solid var(--ac);border-radius:99px;color:#cfe6ff;font-weight:600;font-size:.92rem;box-shadow:0 0 22px rgba(30,144,255,.3)}
 .hero p{color:var(--mut);max-width:650px;font-size:1.1rem}
@@ -39,10 +34,9 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 8px}
 :focus-visible{outline:3px solid #fff;outline-offset:3px}
 .badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
 .badges span{padding:6px 14px;border:1px solid var(--bd);border-radius:99px;font-size:.88rem;color:var(--mut);background:rgba(255,255,255,.04)}
-
 /* prévia do app */
-.shot{position:relative;overflow:hidden;max-width:100%}
-#fr{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 0 70px rgba(30,144,255,.4);border:1px solid var(--bd);max-width:100%;width:100%}
+.shot{position:relative}
+#fr{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 0 70px rgba(30,144,255,.4);border:1px solid var(--bd)}
 #tv{width:1280px;height:720px;transform-origin:top left;position:absolute;left:0;top:0;display:flex;flex-direction:column;gap:8px;padding:16px 28px 14px;background:radial-gradient(900px 520px at 8% -5%,rgba(30,144,255,.45),transparent 70%),linear-gradient(180deg,#06214d,#020b1a 55%,#000)}
 #fr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hn{position:relative;flex:none;height:300px;border-radius:18px;overflow:hidden;border:1px solid var(--bd);background:radial-gradient(560px 340px at 82% 30%,rgba(30,144,255,.75),transparent 70%),linear-gradient(135deg,#0b4fa8,#030a18)}
@@ -56,20 +50,8 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 8px}
 .nv span.on{background:rgba(30,144,255,.4);opacity:1}
 @media (prefers-reduced-motion:no-preference){.rg{animation:mv 8s steps(1,end) infinite}@keyframes mv{0%{transform:translateX(0)}20%{transform:translateX(164px)}40%{transform:translateX(328px)}60%{transform:translateX(492px)}80%{transform:translateX(656px)}}}
 
-/* baixar */
-.dl{padding:30px;display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.dl h3{margin:0 0 8px;font-size:1.5rem}
-ol{margin:0;padding-left:1.2rem;color:#dbe6f5}li{margin:6px 0}
-.note{color:var(--mut);font-size:.9rem;margin-top:12px}
-.code{display:inline-block;padding:2px 14px;border-radius:10px;border:1px dashed var(--ac);font:700 1.5rem Rajdhani,sans-serif;letter-spacing:3px;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.c{padding:22px}
-.c h3{margin:10px 0 4px;font-size:1.3rem}.c p{margin:0;color:var(--mut);font-size:.96rem}
-.c svg{width:30px;height:30px;stroke:var(--ac);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.rev{padding:34px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-
-/* Seção de Planos e Serviço */
-.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:24px}
+/* Estilos da Seção de Planos */
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:20px;margin-top:24px}
 .plan-card{padding:28px 22px;text-align:center;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;border:1px solid var(--bd);transition:transform .2s, border-color .2s}
 .plan-card:hover{transform:translateY(-4px);border-color:var(--ac)}
 .plan-card.feat{border:2px solid var(--ac);box-shadow:0 0 30px rgba(30,144,255,.25)}
@@ -79,37 +61,39 @@ ol{margin:0;padding-left:1.2rem;color:#dbe6f5}li{margin:6px 0}
 .plan-features{list-style:none;padding:0;margin:0 0 20px;text-align:left;font-size:.95rem;color:#dbe6f5}
 .plan-features li{margin:10px 0;display:flex;align-items:center;gap:8px}
 .plan-features li::before{content:"✓";color:var(--ac);font-weight:bold}
-.stick-box{margin-top:24px;padding:20px;border-radius:16px;background:linear-gradient(135deg,rgba(30,144,255,.2),rgba(5,11,24,.9));border:1px dashed var(--ac);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.test-box{margin-top:24px;padding:22px;border-radius:16px;background:linear-gradient(135deg,rgba(30,144,255,.2),rgba(5,11,24,.9));border:1px dashed var(--ac);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+/* baixar */
+.dl{padding:30px;display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.dl h3{margin:0 0 8px;font-size:1.5rem}
+ol{margin:0;padding-left:1.2rem;color:#dbe6f5}li{margin:6px 0}
+.note{color:var(--mut);font-size:.9rem;margin-top:12px}
+.code{display:inline-block;padding:2px 14px;border-radius:10px;border:1px dashed var(--ac);font:700 1.5rem Rajdhani,sans-serif;letter-spacing:3px;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:16px}
+.c{padding:22px}
+.c h3{margin:10px 0 4px;font-size:1.3rem}.c p{margin:0;color:var(--mut);font-size:.96rem}
+.c svg{width:30px;height:30px;stroke:var(--ac);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.rev{padding:34px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 details{padding:16px 20px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
 footer{text-align:center;color:var(--mut);font-size:.88rem;padding:30px 20px 100px}
 footer a{color:#cfe6ff}
 .wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:99px;background:var(--ac);color:#fff;font:700 1.05rem Rajdhani,sans-serif;text-decoration:none;box-shadow:0 0 28px rgba(30,144,255,.7)}
 .so-app{display:none}.in-app .so-app{display:block}.in-app .so-site{display:none!important}
-
-@media (max-width: 600px) {
-  .top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .top nav {
-    width: 100%;
-    justify-content: space-between;
-  }
+@media (max-width:640px){
+  section{padding:30px 0}
+  .top nav a:not(:first-child){display:none}
+  .btns .btn{width:100%;justify-content:center}
+  .dl,.rev{padding:20px}
+  .code{font-size:1.3rem;letter-spacing:2px}
+  .wa{padding:12px 16px}
 }
 </style>
 </head>
 <body>
 <header class="w top">
   <a class="logo" href="#"><svg width="34" height="34" viewBox="0 0 108 108" aria-hidden="true"><path fill="#1e90ff" d="M24,12 L92,48 Q100,54 92,60 L24,96 Q14,100 14,88 L14,20 Q14,8 24,12 Z"/><path fill="#fff" d="M40,36 L72,54 L40,72 Z"/></svg><span>NextGen<span class="ac">.TV</span></span></a>
-  <nav class="so-site" aria-label="Seções">
-    <a href="#planos">Planos</a>
-    <a href="#baixar">Baixar</a>
-    <a href="#recursos">Recursos</a>
-    <a href="#perguntas">Perguntas</a>
-    <a href="#projeto">Crie seu projeto</a>
-  </nav>
+  <nav class="so-site" aria-label="Seções"><a href="#planos">Planos</a><a href="#baixar">Baixar</a><a href="#recursos">Recursos</a><a href="#perguntas">Perguntas</a><a href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Gostaria%20de%20criar%20meu%20pr%C3%B3prio%20projeto%20e%20ter%20um%20app%20com%20a%20minha%20marca." target="_blank" rel="noopener">Crie seu projeto</a></nav>
 </header>
 
 <main>
@@ -119,13 +103,12 @@ footer a{color:#cfe6ff}
   <p>Leve o seu serviço de streaming compatível para um player feito para a TV: destaque em tela cheia, fileiras que respondem ao controle e tudo no lugar certo. Sem mensalidade pelo player.</p>
   <div class="btns">
     <a class="btn pri so-site" href="https://drive.google.com/uc?export=download&id=1CZ3-H5RK6luBcmwGOquZ_NrznDSR25q9"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>Baixar o player grátis</a>
-    <a class="btn so-site" href="#planos">Assine o serviço</a>
+    <a class="btn so-site" href="#baixar">Como instalar</a>
     <a class="btn pri so-app" href="nextgen://player">Entrar no player</a>
   </div>
   <div class="badges"><span>Android</span><span>Google TV</span><span>Fire Stick</span><span>TV Box</span><span>Controle remoto</span></div>
 </section>
 
-<!-- PRÉVIA DO APP -->
 <section class="w shot" style="padding-top:20px">
   <div id="fr" role="img" aria-label="Tela inicial do player NextGen.TV: destaque, fileiras de capas e menu inferior">
     <div id="tv">
@@ -143,67 +126,70 @@ footer a{color:#cfe6ff}
   <p class="note" style="text-align:center">Imagem ilustrativa. Capas e textos vêm do serviço de streaming do próprio usuário.</p>
 </section>
 
-<!-- SEÇÃO DE SERVIÇO E PLANOS -->
-<section id="planos" class="w">
-  <h2>Assine agora o <span class="ac">melhor conteúdo</span> e o <span class="ac">melhor player</span></h2>
-  <p class="sub">A experiência completa: estabilidade total, suporte dedicado e aplicativo exclusivo com avisos e promoções na palma da sua mão.</p>
+<!-- SEÇÃO DE PLANOS E TESTE GRÁTIS -->
+<section id="planos" class="w so-site">
+  <h2>Assine o <span class="ac">melhor conteúdo</span> e player</h2>
+  <p class="sub">Escolha o plano ideal para você com sistema anti-travas, suporte rápido e humano e aplicativo exclusivo.</p>
 
   <div class="plans-grid">
     <div class="gl plan-card">
       <div>
-        <h3 style="margin:0;font-size:1.4rem">Mensal</h3>
-        <p style="color:var(--mut);font-size:.88rem;margin:4px 0 0">Ideal para testar</p>
+        <h3 style="margin:0;font-size:1.4rem">30 Dias</h3>
+        <p style="color:var(--mut);font-size:.88rem;margin:4px 0 0">Plano Mensal</p>
         <div class="plan-price">R$ 27<span style="font-size:1.2rem">,99</span> <span>/ 30 dias</span></div>
         <ul class="plan-features">
           <li>Sistema Anti-travas</li>
           <li>Suporte rápido e humano</li>
-          <li>App exclusivo com avisos</li>
+          <li>Aplicativo exclusivo do cliente</li>
+          <li>Avisos e promoções no app</li>
           <li>Seus dados sempre à mão</li>
         </ul>
       </div>
-      <a class="btn pri" style="justify-content:center;width:100%" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Mensal%20de%20R$%2027,99." target="_blank" rel="noopener">Assinar Plano Mensal</a>
+      <a class="btn pri" style="justify-content:center;width:100%" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20de%2030%20dias%20por%20R$%2027,99." target="_blank" rel="noopener">Assinar 30 Dias</a>
     </div>
 
     <div class="gl plan-card feat">
       <div class="plan-badge">Popular</div>
       <div>
-        <h3 style="margin:0;font-size:1.4rem">Trimestral</h3>
-        <p style="color:var(--mut);font-size:.88rem;margin:4px 0 0">Mais economia</p>
+        <h3 style="margin:0;font-size:1.4rem">90 Dias</h3>
+        <p style="color:var(--mut);font-size:.88rem;margin:4px 0 0">Plano Trimestral</p>
         <div class="plan-price">R$ 74<span style="font-size:1.2rem">,99</span> <span>/ 90 dias</span></div>
         <ul class="plan-features">
           <li>Sistema Anti-travas</li>
           <li>Suporte rápido e humano</li>
-          <li>App exclusivo com avisos</li>
+          <li>Aplicativo exclusivo do cliente</li>
+          <li>Avisos e promoções no app</li>
           <li>Seus dados sempre à mão</li>
-          <li>Desconto no trimestre</li>
+          <li>Mais economia por mês</li>
         </ul>
       </div>
-      <a class="btn pri" style="justify-content:center;width:100%" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Trimestral%20de%20R$%2074,99." target="_blank" rel="noopener">Assinar Plano Trimestral</a>
+      <a class="btn pri" style="justify-content:center;width:100%" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20de%2090%20dias%20por%20R$%2074,99." target="_blank" rel="noopener">Assinar 90 Dias</a>
     </div>
 
     <div class="gl plan-card">
       <div>
-        <h3 style="margin:0;font-size:1.4rem">Anual</h3>
-        <p style="color:var(--mut);font-size:.88rem;margin:4px 0 0">Maior economia</p>
+        <h3 style="margin:0;font-size:1.4rem">1 Ano</h3>
+        <p style="color:var(--mut);font-size:.88rem;margin:4px 0 0">Plano Anual</p>
         <div class="plan-price">R$ 240<span style="font-size:1.2rem">,00</span> <span>/ 1 ano</span></div>
         <ul class="plan-features">
           <li>Sistema Anti-travas</li>
-          <li>Suporte rápido e humano VIP</li>
-          <li>App exclusivo com avisos</li>
+          <li>Suporte VIP prioritário</li>
+          <li>Aplicativo exclusivo do cliente</li>
+          <li>Avisos e promoções no app</li>
           <li>Seus dados sempre à mão</li>
           <li>Apenas R$ 20,00 por mês</li>
         </ul>
       </div>
-      <a class="btn pri" style="justify-content:center;width:100%" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20Anual%20de%20R$%20240,00." target="_blank" rel="noopener">Assinar Plano Anual</a>
+      <a class="btn pri" style="justify-content:center;width:100%" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20assinar%20o%20plano%20de%201%20ano%20por%20R$%20240,00." target="_blank" rel="noopener">Assinar 1 Ano</a>
     </div>
   </div>
 
-  <div class="stick-box">
+  <div class="test-box">
     <div>
-      <h3 style="margin:0;font-size:1.3rem">Adquira o seu Fire Stick</h3>
-      <p style="margin:4px 0 0;color:var(--mut);font-size:.95rem">Adquira o seu Fire Stick agora mesmo e ganhe <b>grátis 30 dias de conteúdo</b>!</p>
+      <h3 style="margin:0;font-size:1.3rem">Quer testar antes de assinar?</h3>
+      <p style="margin:4px 0 0;color:var(--mut);font-size:.95rem">Solicite agora mesmo o seu <b>teste grátis de 12 horas</b> sem compromisso!</p>
     </div>
-    <a class="btn" style="border-color:var(--ac);color:#fff" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Gostaria%20de%20adquirir%20o%20Fire%20Stick%20e%20ganhar%20os%2030%20dias%20gr%C3%A1tis%20de%20conte%C3%BAdo." target="_blank" rel="noopener">Consulte agora mesmo</a>
+    <a class="btn pri" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20teste%20gr%C3%A1tis%20de%2012%20horas." target="_blank" rel="noopener">Solicitar Teste Grátis 12h</a>
   </div>
 </section>
 
@@ -232,7 +218,7 @@ footer a{color:#cfe6ff}
         <li>Permita instalar de fontes desconhecidas para o Downloader (o aparelho mostra o caminho quando você tenta instalar).</li>
         <li>Abra o Downloader, digite o código abaixo e confirme:</li>
       </ol>
-      <p><span class="code">3542314</span></p>
+      <p><span class="code">2214174</span></p>
       <ol start="4"><li>Toque em <b>Instalar</b> e depois em <b>Abrir</b>. Se ele perguntar sobre apagar o arquivo, pode apagar.</li><li>Entre com o servidor, usuário e senha do seu serviço.</li></ol>
       <p class="note">Baixe só por este site. O player não inclui canais, filmes ou séries.</p>
     </div>
@@ -252,10 +238,21 @@ footer a{color:#cfe6ff}
   </div>
 </section>
 
-<section id="projeto" class="w so-site">
+<section id="aparelho" class="w so-site">
   <div class="gl rev">
-    <div><h2 style="margin:0 0 6px">Crie seu projeto</h2><p class="sub" style="margin:0">Tenha um app personalizado com a sua marca. Entre em contato e monte a sua operação.</p></div>
-    <a class="btn pri" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Tenho%20interesse%20em%20criar%20meu%20pr%C3%B3prio%20projeto%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">Crie seu projeto</a>
+    <div>
+      <h2 style="margin:0 0 6px">Transforme sua TV em uma TV Google</h2>
+      <p class="sub" style="margin:0 0 10px">Aparelho Google TV, TV Box ou Fire Stick com o player NextGen.TV já instalado, pronto para você entrar com os dados do seu serviço.</p>
+      <p class="note" style="margin:0">Consulte modelos, preços e prazos pelo WhatsApp. O aparelho não inclui canais, filmes ou séries.</p>
+    </div>
+    <a class="btn pri" target="_blank" rel="noopener" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20aparelho%20para%20transformar%20minha%20TV%20em%20Google%20TV%20com%20o%20player%20NextGen.TV.">Consultar sobre o aparelho</a>
+  </div>
+</section>
+
+<section class="w so-site">
+  <div class="gl rev">
+    <div><h2 style="margin:0 0 6px">Quer um app com a sua marca?</h2><p class="sub" style="margin:0">Monte o seu player, o painel de mensagens e a página de vendas e veja tudo ficando pronto em tempo real.</p></div>
+    <a class="btn pri" target="_blank" rel="noopener" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Gostaria%20de%20criar%20meu%20pr%C3%B3prio%20projeto%20e%20ter%20um%20app%20com%20a%20minha%20marca.">Monte o seu app</a>
   </div>
 </section>
 
@@ -263,4 +260,26 @@ footer a{color:#cfe6ff}
   <h2>Perguntas frequentes</h2>
   <div style="max-width:780px;margin-top:20px">
     <details class="gl"><summary>O player é mesmo grátis?</summary><p>Sim. O player NextGen.TV é gratuito, sem mensalidade pelo app.</p></details>
-    <details class="gl"><summary>Funciona com qualquer serviço de streaming?</summary><p>Funciona com serviços compatíveis, que entre
+    <details class="gl"><summary>Funciona com qualquer serviço de streaming?</summary><p>Funciona com serviços compatíveis, que entregam acesso por servidor, usuário e senha. Plataformas com aplicativo próprio e fechado não são compatíveis.</p></details>
+    <details class="gl"><summary>De onde vêm os canais, filmes e séries?</summary><p>O player não fornece conteúdo nenhum. Tudo vem do serviço que você já tem, e o responsável por ele é quem o oferece.</p></details>
+    <details class="gl"><summary>Em quais aparelhos funciona?</summary><p>Celulares e tablets Android, Google TV, Android TV, TV Box e Fire Stick. Em TVs LG e Samsung o app Android não instala; use um Fire Stick ou TV Box ligado na TV.</p></details>
+    <details class="gl"><summary>Por que o Android avisa sobre "fontes desconhecidas"?</summary><p>Porque o app é instalado por arquivo, e não pela Play Store. O aviso aparece para qualquer app instalado assim. Baixe sempre por este site.</p></details>
+    <details class="gl"><summary>E os meus dados?</summary><p>Login, favoritos e progresso ficam no seu aparelho. Veja os <a style="color:#cfe6ff" href="privacidade.html">termos de uso e a política de privacidade</a>.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 NextGen.TV · <a href="privacidade.html">Termos de uso e privacidade</a><br>Não fornecemos canais, filmes ou séries.</footer>
+
+<a class="wa" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20player%20NextGen.TV." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7L4 20l1.1-5A8 8 0 1 1 21 12z"/></svg>Falar no WhatsApp</a>
+
+<script>
+if (/NextGenApp/.test(navigator.userAgent)) document.documentElement.classList.add('in-app');
+(function () {
+  var fr = document.getElementById('fr'), tv = document.getElementById('tv');
+  function fit() { var k = fr.clientWidth / 1280; tv.style.transform = 'scale(' + k + ')'; fr.style.height = (720 * k) + 'px'; }
+  addEventListener('resize', fit); fit();
+})();
+</script>
+</body>
+</html>
