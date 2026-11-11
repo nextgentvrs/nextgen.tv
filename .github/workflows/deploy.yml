@@ -12,6 +12,10 @@ jobs:
       - name: Checkout do Código
         uses: actions/checkout@v4
 
+      - name: Criar configuração rápida do Firebase
+        run: |
+          echo '{"hosting": {"public": "."}}' > firebase.json
+
       - name: Deploy para Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -19,6 +23,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SECRETS }}'
           channelId: live
           projectId: nextgentv
-          target: nextgentv
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
