@@ -57,11 +57,12 @@ h2{font-size:clamp(1.7rem,4vw,2.4rem);margin:0 0 8px}
 .nv span.on{background:rgba(30,144,255,.4);opacity:1}
 
 /* Baixar */
-.dl{padding:30px;display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.dl{padding:30px;display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
 .dl h3{margin:0 0 8px;font-size:1.5rem}
 ol{margin:0;padding-left:1.2rem;color:#dbe6f5}li{margin:6px 0}
 .note{color:var(--mut);font-size:.9rem;margin-top:12px}
 .code{display:inline-block;padding:2px 14px;border-radius:10px;border:1px dashed var(--ac);font:700 1.5rem Rajdhani,sans-serif;letter-spacing:3px;color:#fff}
+.app-tag{display:inline-block;padding:2px 10px;border-radius:8px;background:rgba(30,144,255,.2);border:1px solid var(--ac);color:#fff;font-weight:700;font-size:.95rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:16px}
 .c{padding:22px}
 .c h3{margin:10px 0 4px;font-size:1.3rem}.c p{margin:0;color:var(--mut);font-size:.96rem}
@@ -100,7 +101,7 @@ footer a{color:#cfe6ff}
 <section class="w hero">
   <span class="pill">⚡ Teste Grátis de 12 Horas sem Compromisso</span>
   <h1>Assista ao melhor conteúdo <span class="ac">sem travamentos.</span></h1>
-  <p>Escolha o plano ideal para você com sistema anti-travas, suporte rápido e humano, e aplicativo exclusivo pronto para Android, Google TV e Fire Stick.</p>
+  <p>Escolha o plano ideal para você com sistema anti-travas, suporte rápido e humano, e compatibilidade total com Smart TVs LG e Samsung (via player Absoluto), Android, Google TV e Fire Stick.</p>
   <div class="btns">
     <a class="btn pri so-site" href="https://wa.me/5551982218563?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20teste%20gr%C3%A1tis%20de%2012%20horas." target="_blank" rel="noopener">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.7 7L4 20l1.1-5A8 8 0 1 1 21 12z"/></svg>
@@ -108,7 +109,15 @@ footer a{color:#cfe6ff}
     </a>
     <a class="btn so-site" href="#planos">Ver Planos</a>
   </div>
-  <div class="badges"><span>Android</span><span>Google TV</span><span>Fire Stick</span><span>TV Box</span><span>Suporte 24h</span></div>
+  <div class="badges">
+    <span>Smart TV LG</span>
+    <span>Smart TV Samsung</span>
+    <span>Android</span>
+    <span>Google TV</span>
+    <span>Fire Stick</span>
+    <span>TV Box</span>
+    <span>Suporte 24h</span>
+  </div>
 </section>
 
 <!-- SEÇÃO DE PLANOS (DESTAQUE PRINCIPAL) -->
@@ -125,7 +134,8 @@ footer a{color:#cfe6ff}
         <ul class="plan-features">
           <li>Sistema Anti-travas</li>
           <li>Suporte rápido e humano</li>
-          <li>Aplicativo exclusivo incluso</li>
+          <li>Compatível com TVs LG e Samsung (Player Absoluto)</li>
+          <li>App exclusivo para Android e TV Box</li>
           <li>Modo Mosaico (2 jogos ao mesmo tempo)</li>
           <li>Qualidade FHD / 4K</li>
         </ul>
@@ -142,7 +152,8 @@ footer a{color:#cfe6ff}
         <ul class="plan-features">
           <li>Sistema Anti-travas</li>
           <li>Suporte rápido e humano</li>
-          <li>Aplicativo exclusivo incluso</li>
+          <li>Compatível com TVs LG e Samsung (Player Absoluto)</li>
+          <li>App exclusivo para Android e TV Box</li>
           <li>Modo Mosaico (2 jogos ao mesmo tempo)</li>
           <li>Qualidade FHD / 4K</li>
           <li>Economia garantida</li>
@@ -159,7 +170,8 @@ footer a{color:#cfe6ff}
         <ul class="plan-features">
           <li>Sistema Anti-travas</li>
           <li>Suporte VIP prioritário</li>
-          <li>Aplicativo exclusivo incluso</li>
+          <li>Compatível com TVs LG e Samsung (Player Absoluto)</li>
+          <li>App exclusivo para Android e TV Box</li>
           <li>Modo Mosaico (2 jogos ao mesmo tempo)</li>
           <li>Qualidade FHD / 4K</li>
           <li>Apenas R$ 15,00 por mês!</li>
@@ -237,13 +249,23 @@ footer a{color:#cfe6ff}
 
 <!-- SEÇÃO DE DOWNLOAD E INSTALAÇÃO -->
 <section id="baixar" class="w so-site">
-  <h2>Como instalar nosso App</h2>
-  <p class="sub">Instale em poucos minutos no seu celular, TV Box, Fire Stick ou Google TV.</p>
+  <h2>Como instalar na sua <span class="ac">TV ou Celular</span></h2>
+  <p class="sub">Configure em poucos minutos na sua Smart TV LG, Samsung, celular, TV Box, Fire Stick ou Google TV.</p>
   <div class="gl dl">
+    <div>
+      <h3>Smart TV LG e Samsung</h3>
+      <ol>
+        <li>Acesse a loja oficial de aplicativos da sua TV (<b>LG Content Store</b> ou <b>Samsung Apps</b>).</li>
+        <li>Busque e instale o aplicativo <span class="app-tag">Absoluto</span>.</li>
+        <li>Abra o player <b>Absoluto</b> na tela inicial da TV.</li>
+        <li>Informe o código exibido na tela ou insira os dados de login fornecidos no seu teste ou assinatura pelo WhatsApp.</li>
+      </ol>
+      <p class="note">Não precisa de aparelhos extras: funciona direto no sistema da sua Smart TV.</p>
+    </div>
     <div>
       <h3>Celular Android e TV Box</h3>
       <ol>
-        <li>Toque no botão abaixo para baixar o app. Se o navegador avisar sobre arquivos desconhecidos, escolha <b>Baixar mesmo assim</b>.</li>
+        <li>Toque no botão abaixo para baixar o nosso app exclusivo. Se o navegador avisar sobre arquivos desconhecidos, escolha <b>Baixar mesmo assim</b>.</li>
         <li>Abra o arquivo APK baixado.</li>
         <li>Se o Android solicitar, permita a instalação a partir desta fonte nas configurações.</li>
         <li>Abra o app e digite os dados de login fornecidos no seu teste ou assinatura.</li>
@@ -274,7 +296,7 @@ footer a{color:#cfe6ff}
     <div class="gl c"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20S3 14 3 8.5A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 9 1.5C21 14 12 20 12 20z"/></svg><h3>Favoritos e Histórico</h3><p>Salve seus canais e conteúdos preferidos com um clique.</p></div>
     <div class="gl c"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg><h3>Reprodução Automática</h3><p>Maratone suas séries sem precisar trocar de episódio manualmente.</p></div>
     <div class="gl c"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg><h3>Atendimento Ágil</h3><p>Suporte pronto para te atender diretamente no WhatsApp.</p></div>
-    <div class="gl c"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><h3>Multiplataforma</h3><p>Assista em smart TVs, TV Box, Fire Stick, celulares e tablets.</p></div>
+    <div class="gl c"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><h3>Multiplataforma</h3><p>Assista direto em Smart TVs LG e Samsung (Player Absoluto), TV Box, Fire Stick e celulares.</p></div>
   </div>
 </section>
 
@@ -294,8 +316,9 @@ footer a{color:#cfe6ff}
 <section id="perguntas" class="w">
   <h2>Perguntas frequentes</h2>
   <div style="max-width:780px;margin-top:20px">
+    <details class="gl"><summary>Funciona direto na minha Smart TV LG ou Samsung?</summary><p>Sim! Para Smart TVs LG (webOS) e Samsung (Tizen), basta baixar o player <b>Absoluto</b> diretamente na loja oficial de aplicativos da sua TV e inserir os dados do seu teste ou assinatura.</p></details>
     <details class="gl"><summary>Como funciona o modo mosaico para ver dois jogos?</summary><p>Com o nosso player, você pode dividir a tela em duas partes para acompanhar duas partidas simultaneamente. É possível alternar o áudio de qual jogo deseja ouvir de forma simples pelo controle remoto.</p></details>
-    <details class="gl"><summary>Como funciona o teste grátis de 12 horas?</summary><p>Você clica no botão de teste grátis, nos chama no WhatsApp e enviaremos um acesso temporário de 12 horas para você testar todos os conteúdos, incluindo o mosaico e a estabilidade antes de contratar.</p></details>
+    <details class="gl"><summary>Como funciona o teste grátis de 12 horas?</summary><p>Você clica no botão de teste grátis, nos chama no WhatsApp e enviaremos um acesso temporário de 12 horas para você testar todos os conteúdos, incluindo a estabilidade antes de contratar.</p></details>
     <details class="gl"><summary>Quais são as formas de pagamento?</summary><p>Aceitamos Pix e Cartão de Crédito. A liberação é feita imediatamente após a validação.</p></details>
     <details class="gl"><summary>Preciso de fidelidade ou contrato?</summary><p>Não. Todos os nossos planos são pré-pagos sem nenhuma fidelidade ou multa. Você renova apenas quando quiser.</p></details>
   </div>
